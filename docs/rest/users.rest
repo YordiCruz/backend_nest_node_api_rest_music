@@ -1,0 +1,27 @@
+GET http://127.0.0.1:3000/users
+
+
+### Guardar usuario
+
+POST http://127.0.0.1:3000/users
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "email": "admin@mail.com",
+    "password": "admin123"
+}
+
+### mostrar usuario por id
+
+GET http://127.0.0.1:3000/users/59fe6769-c092-4ac3-9cac-bc792928106a
+
+### modificar un usuario por id
+
+PATCH http://127.0.0.1:3000/users
+
+### Eliminar
+
+DELETE http://127.0.0.1:3000/users
+
+
