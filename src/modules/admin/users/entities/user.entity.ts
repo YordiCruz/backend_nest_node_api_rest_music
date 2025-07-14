@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Persona } from "../../personas/entities/persona.entity";
+import { Exclude } from "class-transformer";
 
 @Entity()
 export class User {
@@ -11,7 +13,8 @@ export class User {
     @Column({ unique: true })
     email: string;
 
-    @Column()
+    @Exclude() // Excluye esta propiedad al transformar a objeto plano
+    @Column({ select: false }) // No lo incluye en queries por defecto
     password: string;
 
     @Column({ default: true })
@@ -20,8 +23,13 @@ export class User {
     @CreateDateColumn()
     createdAt: Date;
 
-    @CreateDateColumn()
+    @UpdateDateColumn()
     updatedAt: Date;
 
-
+   @OneToOne(() => Persona, persona => persona.user, { 
+        nullable: true,
+        cascade: true // Opcional: permite guardar automáticamente la persona al guardar el usuario
+    })
+    @JoinColumn() // Esto hace que User sea el dueño de la relación
+    persona?: Persona;
 }
