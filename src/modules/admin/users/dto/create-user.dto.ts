@@ -1,7 +1,4 @@
-import { IsEmail, IsString, Matches, MaxLength, MinLength, Validate, ValidateNested } from "class-validator";
-import { Persona } from "../../personas/entities/persona.entity";
-import { Type } from "class-transformer";
-import { CreatePersonaDto } from "../../personas/dto/create-persona.dto";
+import { IsEmail, IsString, Matches, MaxLength, MinLength } from "class-validator";
 
 export class CreateUserDto {
     @IsString()
@@ -17,8 +14,4 @@ export class CreateUserDto {
     @MinLength(8)
     @MaxLength(200)
     password: string;
-
-    @ValidateNested()
-    @Type(() => CreatePersonaDto)
-    persona?: CreatePersonaDto
 }

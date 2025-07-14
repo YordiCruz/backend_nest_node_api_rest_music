@@ -7,36 +7,21 @@ POST http://127.0.0.1:3000/users
 Content-Type: application/json
 
 {
-    "username": "clpn",
-    "email": "clpn@mail.com",
-    "password": "cliante123",
-    "persona":{
-        "nombres": "apoo",
-        "apellidos": "Laa",
-        "fecha_nacimiento": "2023-02-04",
-        "genero": "femenino",
-        "telefono": "123456789",
-        "direccion": "Calle Principal 123"   
-    }
+    "username": "admin",
+    "email": "admin@mail.com",
+    "password": "admin123"
 }
 
 ### mostrar usuario por id
 
-GET http://127.0.0.1:3000/users/8812016a-82a3-422f-9cd6-23e6e6023478
-
+GET http://127.0.0.1:3000/users/59fe6769-c092-4ac3-9cac-bc792928106a
 
 ### modificar un usuario por id
 
-PATCH http://127.0.0.1:3000/users/156118a2-58ef-4652-8e6c-8e3f82ba0719
-Content-Type: application/json
-
-{
-    "username": "adminmodificado",
-    "email": "adminmodi@mail.com"
-}
+PATCH http://127.0.0.1:3000/users
 
 ### Eliminar
 
-DELETE http://127.0.0.1:3000/users/f156e69c-0f90-4cc1-a6b6-bf9471841acd
+DELETE http://127.0.0.1:3000/users
 
 
