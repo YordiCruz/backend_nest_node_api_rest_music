@@ -1,0 +1,45 @@
+
+GET http://127.0.0.1:3000/users
+###
+GET http://127.0.0.1:3000/persona/user/554cb492-213e-4438-bca5-50a8d54aecc3
+
+
+### Guardar perfil completo
+
+POST http://127.0.0.1:3000/persona/completar-perfil/a5402db0-caad-4bdd-bb68-65d570a31315
+Content-Type: application/json
+
+{
+    "nombres": "blastils",
+    "apellidos": "blastil",
+    "ci_dni": "123456",
+    "fecha_nacimiento": "2025-07-12",
+    "genero": "masculino",
+    "telefono": "78123778"
+}
+
+
+
+### mostrar usuario por id
+
+GET http://127.0.0.1:3000/persona/59fe6769-c092-4ac3-9cac-bc792928106a
+
+### modificar un usuario por id
+
+PATCH http://127.0.0.1:3000/persona/user/554cb492-213e-4438-bca5-50a8d54aecc3
+Content-Type: application/json
+
+{
+    "nombres": "blaaaa",
+    "apellidos": "blaaaastil",
+    "ci_dni": "12345678",
+    "fecha_nacimiento": "2025-07-12",
+    "genero": "masculino",
+    "telefono": "78123778"
+}
+
+### Eliminar
+
+DELETE http://127.0.0.1:3000/users
+
+

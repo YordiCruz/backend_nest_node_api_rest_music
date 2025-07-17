@@ -1,0 +1,13 @@
+
+
+### crear permiso
+
+POST http://127.0.0.1:3000/permissions
+Content-Type: application/json
+
+{
+    "nombre": "cajero",
+    "descripcion": "administrar ventas y la caja ",
+    "subject": "vender productos",
+    "action": "crear, actualizar, eliminar"
+}

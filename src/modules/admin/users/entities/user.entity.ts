@@ -1,27 +1,55 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Role } from '../../role/entities/role.entity';
+import { Persona } from '../../persona/entities/persona.entity';
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column({ unique: true })
-    username: string;
+  @Column({ unique: true })
+  username: string;
 
-    @Column({ unique: true })
-    email: string;
+  @Column({ unique: true })
+  email: string;
 
-    @Column()
-    password: string;
+  @Column()
+  password: string;
 
-    @Column({ default: true })
-    isActive: boolean;
+  @Column({ default: false })
+  perfilCompleto: boolean; //   Bandera para controlar si completó persona/cliente
 
-    @CreateDateColumn()
-    createdAt: Date;
+  @Column({ default: true })
+  isActive: boolean;
 
-    @CreateDateColumn()
-    updatedAt: Date;
+  @CreateDateColumn()
+  createdAt: Date;
 
+  @CreateDateColumn()
+  updatedAt: Date;
 
+  @ManyToMany(() => Role, { eager: true })
+  @JoinTable({
+    name: 'users_roles',
+    joinColumn: {
+      name: 'user_id',
+      referencedColumnName: 'id',
+    },
+    inverseJoinColumn: {
+      name: 'role_id',
+      referencedColumnName: 'id',
+    },
+  })
+  roles: Role[];
+
+  @OneToOne(() => Persona, (p) => p.user, { nullable: true })
+  persona: Persona | null;
 }

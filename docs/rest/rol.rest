@@ -1,0 +1,51 @@
+
+GET http://127.0.0.1:3000/role
+
+### agregar permisos a rol
+
+PATCH http://127.0.0.1:3000/role/60bb0178-ce6f-4535-ae85-3ff66e068fb6/permissions/add
+Content-Type: application/json
+
+{
+    "permissionIds": ["b10d9ac5-06dd-4e19-b10f-f63c7d5946dd", "3083f651-5aac-4e0a-afb8-97f9a30c80ab", "9525f009-1072-4a79-b8d6-9c1123672488"]
+
+}
+
+###
+POST http://127.0.0.1:3000/role
+Content-Type: application/json
+
+{
+  "nombre": "banc",
+  "descripcion": " ventas y la caja "
+}
+
+### quitar permisos por otros
+
+PATCH http://127.0.0.1:3000/role/60bb0178-ce6f-4535-ae85-3ff66e068fb6/permissions
+Content-Type: application/json
+
+{
+    "permissionIds": ["9525f009-1072-4a79-b8d6-9c1123672488"]
+}
+
+### cambiar un permiso por otro
+
+PATCH http://127.0.0.1:3000/role/64ad5f99-e32f-4e49-b3dd-e2d5ec4ff376/permissions/replace
+Content-Type: application/json
+
+{
+  "removeId": "9525f009-1072-4a79-b8d6-9c1123672488",
+  "addId": "3083f651-5aac-4e0a-afb8-97f9a30c80ab"
+}
+
+### eliminar permiso de rol
+
+PATCH http://127.0.0.1:3000/role/60bb0178-ce6f-4535-ae85-3ff66e068fb6/permissions/remove
+Content-Type: application/json
+
+{
+  "permissionIds": [
+    "3083f651-5aac-4e0a-afb8-97f9a30c80ab"
+  ]
+}

@@ -1,5 +1,15 @@
+###
 GET http://127.0.0.1:3000/users
 
+
+###
+PATCH  http://127.0.0.1:3000/users/b0757148-d393-4ad9-8873-309830a743bb/role/replace
+Content-Type: application/json
+
+{
+    "removeId": "60bb0178-ce6f-4535-ae85-3ff66e068fb6",
+    "addId": "33f44553-e360-406e-95f4-ba2c02c37fe6"
+}
 
 ### Guardar usuario
 
@@ -7,10 +17,39 @@ POST http://127.0.0.1:3000/users
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "email": "admin@mail.com",
-    "password": "admin123"
+    "username": "mina",
+    "email": "mina@mail.com",
+    "password": "mina1234"
 }
+
+### Guardar usuario para roles
+
+POST http://127.0.0.1:3000/users
+Content-Type: application/json
+
+{
+  "username": "empleado2",
+  "email": "empleado2@empresa.com",
+  "password": "12345786",
+  "isActive": true
+}
+
+### Guardar perfil completo
+
+POST http://127.0.0.1:3000/persona/completar-perfil/a5402db0-caad-4bdd-bb68-65d570a31315
+Content-Type: application/json
+
+{
+    "nombres": "blastils",
+    "apellidos": "blastil",
+    "ci_dni": "123456",
+    "fecha_nacimiento": "2025-07-12",
+    "genero": "masculino",
+    "telefono": "78123778"
+}
+
+
+
 
 ### mostrar usuario por id
 
@@ -18,7 +57,14 @@ GET http://127.0.0.1:3000/users/59fe6769-c092-4ac3-9cac-bc792928106a
 
 ### modificar un usuario por id
 
-PATCH http://127.0.0.1:3000/users
+PATCH http://127.0.0.1:3000/users/554cb492-213e-4438-bca5-50a8d54aecc3
+Content-Type: application/json
+
+{
+    "username": "minaa",
+    "email": "minaa@mail.com",
+    "password": "mina1234"
+}
 
 ### Eliminar
 
