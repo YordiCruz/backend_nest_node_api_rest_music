@@ -1,0 +1,17 @@
+GET http://127.0.0.1:3000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzUzMTk4MTU2LCJleHAiOjE3NTMyMDE3NTZ9.AWyTunfbOOEYhKyqbJr-UXaP9gTfefQCI6ij2o8aB78
+
+
+
+### registro
+
+
+POST http://127.0.0.1:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "simon10",
+    "email": "simon@mail.com",
+    "password": "simon123"
+}
+

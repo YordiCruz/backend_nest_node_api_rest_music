@@ -1,0 +1,29 @@
+@baseUrl = http://127.0.0.1:3000
+@contentType = application/json
+
+###listar
+GET {{baseUrl}}/categoria-especialidades
+
+### Crear una nueva categoría
+POST {{baseUrl}}/categoria-especialidades
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Vientos",
+  "descripcion": "Categoría para trompetas",
+  "icono": "bata"
+}
+
+### Obtener una categoría específica (reemplazar :id)
+GET {{baseUrl}}/categoria-especialidades/829b8862-7239-4ede-a866-f18aec8b0323
+
+### Actualizar una categoría
+PATCH {{baseUrl}}/categoria-especialidades/829b8862-7239-4ede-a866-f18aec8b0323
+Content-Type: {{contentType}}
+
+{
+  "icono": "guitar-electric"
+}
+
+###  Eliminar una categoría (debe estar vacía)
+DELETE {{baseUrl}}/categorias-especialidad/

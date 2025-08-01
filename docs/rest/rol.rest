@@ -1,5 +1,6 @@
 
 GET http://127.0.0.1:3000/role
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzUzODI5MTY4LCJleHAiOjE3NTM4MzI3Njh9.eKOCuD2Jmm5ygg9WzalFizJ9HH8dRp9vjL0VK3jvrCY 
 
 ### agregar permisos a rol
 

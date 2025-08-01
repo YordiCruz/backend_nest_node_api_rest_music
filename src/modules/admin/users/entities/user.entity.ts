@@ -9,6 +9,7 @@ import {
 } from 'typeorm';
 import { Role } from '../../role/entities/role.entity';
 import { Persona } from '../../persona/entities/persona.entity';
+import { Integrante } from '../../integrantes/entities/integrante.entity';
 
 @Entity()
 export class User {
@@ -52,4 +53,7 @@ export class User {
 
   @OneToOne(() => Persona, (p) => p.user, { nullable: true })
   persona: Persona | null;
+
+  @OneToOne(() => Integrante, (i) => i.user, { nullable: true })
+  integrante: Integrante | null;
 }

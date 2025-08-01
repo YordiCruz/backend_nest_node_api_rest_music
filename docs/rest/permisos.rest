@@ -1,4 +1,6 @@
+### listar permisos
 
+GET http://127.0.0.1:3000/permissions
 
 ### crear permiso
 
@@ -11,3 +13,5 @@ Content-Type: application/json
     "subject": "vender productos",
     "action": "crear, actualizar, eliminar"
 }
+
+### 

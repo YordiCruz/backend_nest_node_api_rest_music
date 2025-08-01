@@ -1,37 +1,40 @@
 ###
 GET http://127.0.0.1:3000/users
+Authorization: Berear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzUzODI4NjIyLCJleHAiOjE3NTM4MzIyMjJ9.qpWCtJu29wB7PLpR93smdcB9_KWygHOXnospZ4rdhwI
 
-
-###
+### reemplazar rol por otro
 PATCH  http://127.0.0.1:3000/users/b0757148-d393-4ad9-8873-309830a743bb/role/replace
 Content-Type: application/json
 
 {
-    "removeId": "60bb0178-ce6f-4535-ae85-3ff66e068fb6",
-    "addId": "33f44553-e360-406e-95f4-ba2c02c37fe6"
+    "removeId": "33f44553-e360-406e-95f4-ba2c02c37fe6",
+    "addId": "60bb0178-ce6f-4535-ae85-3ff66e068fb6"
 }
 
 ### Guardar usuario
 
 POST http://127.0.0.1:3000/users
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzUzODI4NjIyLCJleHAiOjE3NTM4MzIyMjJ9.qpWCtJu29wB7PLpR93smdcB9_KWygHOXnospZ4rdhwI
 
 {
-    "username": "mina",
-    "email": "mina@mail.com",
-    "password": "mina1234"
+    "username": "mela",
+    "email": "mela@mail.com",
+    "password": "mael1234"
 }
 
-### Guardar usuario para roles
+### Guardar usuario con roles
+
 
 POST http://127.0.0.1:3000/users
 Content-Type: application/json
 
 {
-  "username": "empleado2",
-  "email": "empleado2@empresa.com",
+  "username": "ema00",
+  "email": "ema003@empresa.com",
   "password": "12345786",
-  "isActive": true
+  "isActive": true,
+  "roleIds": [ "33f44553-e360-406e-95f4-ba2c02c37fe6"]
 }
 
 ### Guardar perfil completo
@@ -69,5 +72,16 @@ Content-Type: application/json
 ### Eliminar
 
 DELETE http://127.0.0.1:3000/users
+
+
+### Eliminar rol de un usuario
+
+PATCH http://127.0.0.1:3000/users/699fe6bb-757f-4067-adf3-4c44c3598dfa/role/remove
+Content-Type: application/json
+
+{
+    "roleIds": ["60bb0178-ce6f-4535-ae85-3ff66e068fb6"]
+}
+
 
 

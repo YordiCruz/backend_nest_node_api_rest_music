@@ -1,0 +1,18 @@
+### Crear integrante
+POST http://localhost:3000/integrantes
+Content-Type: application/json
+
+{
+  "id_usuario": "5071b7ad-aca0-4d89-9a5c-540bc187a9bf",
+  "tarifa_base_hora": "150",
+  "fecha_ingreso": "2025-07-29",
+  "estado": true
+}
+
+
+### buscar
+GET http://localhost:3000/integrantes
+
+### buscar por id
+GET http://localhost:3000/integrantes/5071b7ad-aca0-4d89-9a5c-540bc187a9bf
+

@@ -1,0 +1,31 @@
+@baseUrl = http://127.0.0.1:3000
+@contentType = application/json
+
+### Obtener todas las especialidades
+GET {{baseUrl}}/especialidades
+
+###  Crear una especialidad (asignar a categoría existente)
+POST {{baseUrl}}/especialidades
+Content-Type: {{contentType}}
+
+{
+  "id_categoria": "99b30eb5-8aff-44af-8bc1-54feeb072b75",
+  "nombre": "trompeta 2",
+  "tarifa_base": 45.00,
+  "nivel_dificultad": 3
+}
+
+###  Obtener una especialidad específica
+GET {{baseUrl}}/especialidades/f2914801-147c-4a6c-a2f8-7529654cd450
+
+###  Actualizar una especialidad
+PATCH {{baseUrl}}/especialidades/f2914801-147c-4a6c-a2f8-7529654cd450
+Content-Type: {{contentType}}
+
+{
+  "tarifa_base": 50.02
+}
+
+###  Eliminar una especialidad
+DELETE {{baseUrl}}/especialidades/
+

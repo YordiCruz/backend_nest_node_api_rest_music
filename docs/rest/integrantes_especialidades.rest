@@ -1,0 +1,27 @@
+### Crear relación entre integrante y especialidad
+POST http://localhost:3000/integrante-especialidades
+Content-Type: application/json
+
+{
+  "id_integrante": "3b2e6e75-c1bb-4fb4-8d8f-ae2286f9e0d7",
+  "id_especialidad": "f12eb26c-c3f2-46f7-b98c-ee2f48726353",
+  "nivel_dominio": 3
+}
+
+
+### Obtener todas las relaciones
+GET http://localhost:3000/integrante-especialidades
+
+### Obtener especialidades por integrante
+GET http://localhost:3000/integrante-especialidades/integrante/3b2e6e75-c1bb-4fb4-8d8f-ae2286f9e0d7
+
+### Actualizar nivel_dominio
+PATCH http://localhost:3000/integrante-especialidades/3b2e6e75-c1bb-4fb4-8d8f-ae2286f9e0d7/id_especialidad
+Content-Type: application/json
+
+{
+  "nivel_dominio": 5
+}
+
+### Eliminar relación
+DELETE http://localhost:3000/integrante-especialidades/3b2e6e75-c1bb-4fb4-8d8f-ae2286f9e0d7/id_especialidad

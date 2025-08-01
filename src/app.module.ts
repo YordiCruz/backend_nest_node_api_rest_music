@@ -11,6 +11,17 @@ import { Role } from './modules/admin/role/entities/role.entity';
 import { Permission } from './modules/admin/permissions/entities/permission.entity';
 import { PersonaModule } from './modules/admin/persona/persona.module';
 import { Persona } from './modules/admin/persona/entities/persona.entity';
+import { AuthModule } from './modules/auth/auth.module';
+import { IntegrantesModule } from './modules/admin/integrantes/integrantes.module';
+import { Integrante } from './modules/admin/integrantes/entities/integrante.entity';
+import { LiquidacionesModule } from './modules/admin/liquidaciones/liquidaciones.module';
+import { Liquidaciones } from './modules/admin/liquidaciones/entities/liquidaciones.entity';
+import { EspecialidadesModule } from './modules/admin/especialidades/especialidades.module';
+import { IntegranteEspecialidadesModule } from './modules/admin/integrante_especialidades/integrante_especialidades.module';
+import { CategoriaEspecialidadesModule } from './modules/admin/categoria_especialidades/categoria_especialidades.module';
+import { IntegranteEspecialidades } from './modules/admin/integrante_especialidades/entities/integrante_especialidade.entity';
+import { Especialidade } from './modules/admin/especialidades/entities/especialidade.entity';
+import { CategoriaEspecialidade } from './modules/admin/categoria_especialidades/entities/categoria_especialidade.entity';
 
 @Module({
   imports: [
@@ -25,13 +36,19 @@ import { Persona } from './modules/admin/persona/entities/persona.entity';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities:[User, Role, Permission, Persona],
+      entities:[User, Role, Permission, Persona, Integrante, Liquidaciones, Especialidade, CategoriaEspecialidade, IntegranteEspecialidades],
       synchronize: true,
     }),
     UsersModule,
     RoleModule,
     PermissionsModule,
-    PersonaModule          
+    PersonaModule,
+    AuthModule,
+    IntegrantesModule,
+    LiquidacionesModule,
+    EspecialidadesModule,
+    CategoriaEspecialidadesModule,
+    IntegranteEspecialidadesModule          
     ],
   controllers: [AppController],
   providers: [AppService],
