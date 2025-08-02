@@ -56,7 +56,9 @@ Content-Type: application/json
 
 ### mostrar usuario por id
 
-GET http://127.0.0.1:3000/users/59fe6769-c092-4ac3-9cac-bc792928106a
+GET http://127.0.0.1:3000/users/740d07d6-47d4-48e5-97f9-83ed1be9e7d7
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzU0MTA0OTU3LCJleHAiOjE3NTQxMDg1NTd9.Z9t5ysoSRzQxQb98nnSn3HWfQmu1buyKRFdsQc5HShc
+
 
 ### modificar un usuario por id
 

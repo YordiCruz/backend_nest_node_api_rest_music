@@ -22,6 +22,12 @@ import { CategoriaEspecialidadesModule } from './modules/admin/categoria_especia
 import { IntegranteEspecialidades } from './modules/admin/integrante_especialidades/entities/integrante_especialidade.entity';
 import { Especialidade } from './modules/admin/especialidades/entities/especialidade.entity';
 import { CategoriaEspecialidade } from './modules/admin/categoria_especialidades/entities/categoria_especialidade.entity';
+import { EventosModule } from './modules/admin/eventos/eventos.module';
+import { CategoriaEventosModule } from './modules/admin/categoria_eventos/categoria_eventos.module';
+import { MultimediaEventosModule } from './modules/admin/multimedia_eventos/multimedia_eventos.module';
+import { Evento } from './modules/admin/eventos/entities/evento.entity';
+import { CategoriaEvento } from './modules/admin/categoria_eventos/entities/categoria_evento.entity';
+import { MultimediaEvento } from './modules/admin/multimedia_eventos/entities/multimedia_evento.entity';
 
 @Module({
   imports: [
@@ -36,7 +42,7 @@ import { CategoriaEspecialidade } from './modules/admin/categoria_especialidades
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities:[User, Role, Permission, Persona, Integrante, Liquidaciones, Especialidade, CategoriaEspecialidade, IntegranteEspecialidades],
+      entities:[User, Role, Permission, Persona, Integrante, Liquidaciones, Especialidade, CategoriaEspecialidade, IntegranteEspecialidades, Evento, CategoriaEvento, MultimediaEvento],
       synchronize: true,
     }),
     UsersModule,
@@ -48,7 +54,10 @@ import { CategoriaEspecialidade } from './modules/admin/categoria_especialidades
     LiquidacionesModule,
     EspecialidadesModule,
     CategoriaEspecialidadesModule,
-    IntegranteEspecialidadesModule          
+    IntegranteEspecialidadesModule,
+    EventosModule,
+    CategoriaEventosModule,
+    MultimediaEventosModule          
     ],
   controllers: [AppController],
   providers: [AppService],

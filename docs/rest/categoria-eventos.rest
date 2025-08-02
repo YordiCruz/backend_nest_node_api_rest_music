@@ -1,0 +1,25 @@
+### Crear categoría
+POST http://localhost:3000/categoria-eventos
+Content-Type: application/json
+
+{
+  "nombre": "aniversarios",
+  "descripcion": "Eventos cuempleaños de todas las edades"
+}
+
+### Obtener todas las categorías
+GET http://localhost:3000/categoria-eventos
+
+### Obtener una categoría por ID
+GET http://localhost:3000/categoria-eventos/0a264a1e-f3e2-4ef5-a857-98a5f9508bc1
+
+### Actualizar categoría
+PATCH http://localhost:3000/categoria-eventos/0a264a1e-f3e2-4ef5-a857-98a5f9508bc1
+Content-Type: application/json
+
+{
+  "descripcion": "Eventos de bodas con música"
+}
+
+### Eliminar categoría
+DELETE http://localhost:3000/categoria-eventos/b57e5bd5-2e6c-4a1f-a936-4a5faf654d99

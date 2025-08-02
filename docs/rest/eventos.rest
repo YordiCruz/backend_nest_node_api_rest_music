@@ -1,0 +1,30 @@
+### Crear evento
+POST http://localhost:3000/eventos
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzU0MTA0OTU3LCJleHAiOjE3NTQxMDg1NTd9.Z9t5ysoSRzQxQb98nnSn3HWfQmu1buyKRFdsQc5HShc
+
+{
+  "nombre": "Boda en el ",
+  "descripcion": "Una boda al aire libre con vista al lago",
+  "id_categoria": "50fddbff-6fc8-434f-bcde-8357996af837"
+}
+
+### Obtener todos los eventos
+GET http://localhost:3000/eventos
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzU0MTA0OTU3LCJleHAiOjE3NTQxMDg1NTd9.Z9t5ysoSRzQxQb98nnSn3HWfQmu1buyKRFdsQc5HShc
+
+### Obtener evento por ID
+GET http://localhost:3000/eventos/
+
+### Actualizar evento
+PATCH http://localhost:3000/eventos/5da58365-a622-433d-a0dd-097d4c8a0eab
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0MGQwN2Q2LTQ3ZDQtNDhlNS05N2Y5LTgzZWQxYmU5ZTdkNyIsImVtYWlsIjoibWFlbEBtYWlsLmNvbSIsInJvbGVzIjpbXSwiaWF0IjoxNzU0MTA0OTU3LCJleHAiOjE3NTQxMDg1NTd9.Z9t5ysoSRzQxQb98nnSn3HWfQmu1buyKRFdsQc5HShc
+
+{
+  "nombre": "Boda en la playa",
+  "descripcion": "Actualizado: Boda con música en vivo"
+}
+
+### Eliminar evento
+DELETE http://localhost:3000/eventos/1

@@ -1,0 +1,28 @@
+
+### Crear multimedia para un evento
+POST http://localhost:3000/multimedia-eventos
+Content-Type: application/json
+
+{
+  "id_evento": "5da58365-a622-433d-a0dd-097d4c8a0eab",
+  "tipo": "imagen",
+  "url": "https://ejemplo.com/fotos/boda1.jpg",
+  "descripcion": "Imagen del escenario decorado"
+}
+
+### Obtener toda la multimedia
+GET http://localhost:3000/multimedia-eventos
+
+### Obtener multimedia por ID
+GET http://localhost:3000/multimedia-evento/1
+
+### Actualizar multimedia
+PATCH http://localhost:3000/multimedia-evento/1
+Content-Type: application/json
+
+{
+  "descripcion": "Actualizado: Escenario principal decorado"
+}
+
+### Eliminar multimedia
+DELETE http://localhost:3000/multimedia-evento/1
